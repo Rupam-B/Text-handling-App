@@ -6,6 +6,12 @@ import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 // import Sidebar from './components/Sidebar';
 
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
+
 
 function App() {
   const [mode , setMode] = useState('light')
@@ -40,11 +46,19 @@ function App() {
   }
   return (
     <>
+    {/* <Router> */}
+
    <Navbar MainTitle="Rupam's Text Handle App" switchText={switchText} mode={mode} Text={Text} toggleMode={toggleMode} aboutText='About Us'/>
    <Alert alert ={alert}/>
    <div className="my-3"></div>
-   <TextForm showAlert ={showAlert} switchText={switchText} mode={mode}  Text={Text} toggleMode={toggleMode} heading="Convert Text to Upper / Lower Case"/>
-   {/* <About/> */}
+   {/* <Routes> */}
+          {/* <Route exact path="/about" element = {<About />}/> */}
+            
+          {/* <Route exact path="/" element ={}/>  */}
+
+          <TextForm showAlert ={showAlert} switchText={switchText} mode={mode}  Text={Text} toggleMode={toggleMode} heading="Convert Text to Capital / Small Letters"/>     
+    {/* </Routes> */}
+    {/* </Router> */}
     </>
   );
 }

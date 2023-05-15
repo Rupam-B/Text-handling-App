@@ -10,14 +10,14 @@ export default function TextForm(props) {
         console.log("UpperCasing clicked");
         let newText=text.toUpperCase();
         setText(newText);
-        props.showAlert('Text converted to UpperCase', 'success')
+        props.showAlert('Text converted to Capital Letters', 'success')
         
     }
     const handlednClick=()=>{
         console.log("LowerCasing clicked");
         let newText=text.toLowerCase();
         setText(newText);
-        props.showAlert('Text converted to LowerCase', 'success')
+        props.showAlert('Text converted to Small Letters', 'success')
         
     }
     const nullText=()=>{
@@ -29,7 +29,7 @@ export default function TextForm(props) {
         let text = document.getElementById("exampleFormControlTextarea1");
         text.select();
         navigator.clipboard.writeText(text.value);
-        props.showAlert('Text Copied to cipboard', 'success')
+        props.showAlert('Text Copied to clipboard', 'success')
 
     }
     const [text, setText] = useState("Enter text here");
@@ -39,8 +39,8 @@ export default function TextForm(props) {
             <div className="mb-3">
                 <textarea  className={`form-control" container bg-${props.mode} text-${props.Text}`} value={text}  onChange={handleChange}id="exampleFormControlTextarea1" rows="8"></textarea>
             </div>
-            <button className="btn btn-primary" onClick={handleClick}>Click for UpperCase</button>
-            <button className="btn btn-primary mx-4" onClick={handlednClick}>Click for LowerCase</button>
+            <button className="btn btn-primary" onClick={handleClick}>Click for Capital Letters</button>
+            <button className="btn btn-primary mx-4" onClick={handlednClick}>Click for Small Letters</button>
             <button className="btn btn-primary" onClick={nullText}>Clear Text</button>
             <button className="btn btn-primary mx-4" onClick={copyText} >Copy Text</button>
         <div className="container my-8">
